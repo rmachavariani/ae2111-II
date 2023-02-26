@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+
+        <link href="static/style.css" rel="stylesheet" type="text/css">
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+        <title>
+            Link Budget Tool
+        </title>
+    </head>
+    <body style="max-width:1440px; margin: 5rem auto;">
+        <h3>
+                        Link Budget Tool
+        </h3>
+        <p>
+            This is a link budget calculation tool.<br>
+            Please insert appropriate parameters and use supplementary figures to identify unknown variables:<br>
+        </p>
+
+            <div class="row align-items-start">
+                <div class="col">
+                    <form action="/output" method="post">
+
+                <label  class="form-label">Calculation Mode:</label>
+                <select class="form-select" id="calculation_mode" name="mode" required="required">
+                    <option value="uplink">Uplink</option>
+                    <option value="downlink">Downlink</option>
+                </select><br>
+
+                <label  class="form-label">Mission type:</label>
+                <select class="form-select" id="mission_type" name="mission_type" required="required">
+                    <option value="earth_orbiting">Earth orbiting</option>
+                    <option value="interplanetary">Interplanetary</option>
+                    <option value="lunar">Lunar</option>
+                </select><br>
+
+                <label  class="form-label">Antenna Type:</label>
+                <select  class="form-select" id="antenna_type" name="antenna_type" required="required">
+                    <option value="parabolic">Parabolic</option>
+                    <option value="helical">Helical</option>
+                    <option value="horn">Horn</option>
+                </select><br>
+
+                <label  class="form-label">Satellite antenna diameter [m]:</label>
+                <input  type="number" step="any" class="form-control" name="satellite_antenna_diameter" required="required"><br>
+
+                <label  class="form-label">Ground station antenna diameter [m]:</label>
+                <input  type="number" step="any" class="form-control" name="ground_station_antenna_diameter" required="required"><br>
+
+                <label  class="form-label">Satellite antenna efficiency [-]:</label>
+                <input  type="number" step="any" class="form-control" name="satellite_antenna_efficiency" required="required"><br>
+
+                <label  class="form-label">Ground station antenna efficiency [-]:</label>
+                <input  type="number" step="any" class="form-control" name="ground_station_antenna_efficiency" required="required"><br>
+
+                <label  class="form-label">Satellite antenna helix length [m]:</label>
+                <input  type="number" step="any" class="form-control" name="satellite_antenna_helix_length" required="required"><br>
+
+                <label  class="form-label">Ground station antenna helix length [m]:</label>
+                <input  type="number" step="any" class="form-control" name="ground_station_antenna_helix_length" required="required"><br>
+
+                <label  class="form-label">Pointing offset angle [deg]:</label>
+                <input  type="number" step="any" class="form-control" name="pointing_offset_angle" required="required"><br>
+
+                <label  class="form-label">Satellite transmitter power [W]:</label>
+                <input  type="number" step="any" class="form-control" name="transmitter_power_satellite" required="required"><br>
+
+                <label  class="form-label">Ground station transmitter power [W]:</label>
+                <input  type="number" step="any" class="form-control" name="transmitter_power_groundstation" required="required"><br>
+
+                <label  class="form-label">Transmitter loss factor [-]:</label>
+                <input  type="number" step="any" class="form-control" name="transmitter_loss_factor" required="required"><br>
+
+                <label  class="form-label">Total spacecraft power [W]:</label>
+                <input  type="number" step="any" class="form-control" name="total_sc_power" required="required"><br>
+
+                <label  class="form-label">Receiver loss factor [-]:</label>
+                <input  type="number" step="any" class="form-control" name="receiver_loss_factor" required="required"><br>
+
+                <label  class="form-label">Orbit altitude [m]:</label>
+                <input  type="number" step="any" class="form-control" name="orbit_altitude" required="required"><br>
+
+                <label  class="form-label">Elongation angle [deg]:</label>
+                <input  type="number" step="any" class="form-control" name="elongation_angle" required="required"><br>
+
+                <label  class="form-label">Required uplink data rate [bit/s]:</label>
+                <input  type="number" step="any" class="form-control" name="required_uplink_data_rate" required="required"><br>
+
+                <label  class="form-label">Swath width angle [deg]:</label>
+                <input  type="number" step="any" class="form-control" name="swath_width_angle" required="required"><br>
+
+                <label  class="form-label">Payload pixel size [arcmin]:</label>
+                <input  type="number" step="any" class="form-control" name="payload_pixel_size" required="required"><br>
+
+                <label  class="form-label">Payload bits per pixel [-]:</label>
+                <input  type="number" step="any" class="form-control" name="payload_bits_per_pixel" required="required"><br>
+
+                <label  class="form-label">Duty cycle [-] (enter as decimal e.g. 0.777):</label>
+                <input  type="number" step="any" class="form-control" name="duty_cycle" required="required"><br>
+
+                <label  class="form-label">Downlink time [-] (enter as decimal e.g. 0.777):</label>
+                <input  type="number" step="any" class="form-control" name="downlink_time" required="required"><br>
+
+                <label  class="form-label">Required BER [-]:</label>
+                <input  type="number" step="any" class="form-control" name="required_ber" required="required"><br>
+
+                <label  class="form-label">Downlink frequency[GHz]:</label>
+                <input  type="number" step="any" class="form-control" name="downlink_frequency" required="required"><br>
+
+                <label  class="form-label">Turn around ration [-] (enter as decimal e.g. 0.777):</label>
+                <input  type="number" step="any" class="form-control" name="turn_around_ratio" required="required"><br>
+
+                <label  class="form-label">Spacecraft to Sun distance [m]:</label>
+                <input  type="number" step="any" class="form-control" name="sc_sun_distance" required="required"><br>
+
+                <label  class="form-label">Body gravitational parameter [m<sup>3</sup>s<sup>-2</sup>]:</label>
+                <input  type="number" step="any" class="form-control" name="gravitational_parameter" required="required"><br>
+
+                <label  class="form-label">Body radius [m]:</label>
+                <input  type="number" step="any" class="form-control" name="body_radius" required="required"><br>
+
+                <label  class="form-label">Required SNR [dB]:</label>
+                <input  type="number" step="any" class="form-control" name="required_snr" required="required"><br>
+
+                <label  class="form-label">Downlink atmospheric attenuation [dB]:</label>
+                <input  type="number" step="any" class="form-control" name="downlink_atmospheric_attenuation" required="required"><br>
+
+                <label  class="form-label">Uplink atmospheric attenuation [dB]:</label>
+                <input  type="number" step="any" class="form-control" name="uplink_atmospheric_attenuation" required="required"><br>
+
+                <input  class="btn btn-primary" name= "form" type="submit" value="Submit" />
+            </form>
+                </div>
+                <div class="col">
+                    <img src="{{url_for('static', filename='ber.png')}}" style="max-width:100%">
+                    <img src="{{url_for('static', filename='ber2.png')}}" style="max-width:100%">
+                    <img src="{{url_for('static', filename='atten.png')}}"  style="max-width:100%">
+                </div>
+            </div>
+    </body>
+</html>
+
+

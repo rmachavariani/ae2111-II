@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+
+        <link href="static/style.css" rel="stylesheet" type="text/css">
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+        <title>
+            Link Budget Tool Results
+        </title>
+    </head>
+    <body style="max-width:1440px; margin: auto; margin-top: 5rem">
+        <h3>
+                        Link Budget Tool Output
+        </h3>
+        <div class="row">
+            <div class="col">
+                <table  class="table table-striped" style="border-collapse: collapse; border: none; border-spacing: 0px;">
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Mode
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['mode']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Transmitter Power [dBW]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['transmitter_power']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Transmitter Antenna Gain [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                                        {{results['transmitter_antenna_gain']}}
+
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Transmitter Loss Factor [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['loss_factor_transmitter']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Receiver Antenna Gain [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                                        {{results['receiver_antenna_gain']}}
+
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Receiver Loss Factor [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['loss_factor_receiver']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Space Loss [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['space_loss']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Transmission Path Loss [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['transmission_path_loss']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Antenna Pointing Loss [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['antenna_pointing_loss']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Required Data Rate (1/R) [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['required_data_rate']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    System Noise Temperature (1/T) [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['system_noise_temperature']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Received SNR [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['received_snr']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Required SNR [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['required_snr']}}
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    Margin [dB]
+                </td>
+                <td style="padding-right: 3pt; padding-left: 3pt;">
+                    {{results['snr_margin']}}
+                </td>
+            </tr>
+        </table>
+            </div>
+        </div>
+    </body>
+</html>
